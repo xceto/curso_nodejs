@@ -1,0 +1,15 @@
+{
+  "name": "prueba",
+  "version": "1.0.1",
+  "description": "tutorial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ceto",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "yargs": "^13.3.0"
+  }
+}
