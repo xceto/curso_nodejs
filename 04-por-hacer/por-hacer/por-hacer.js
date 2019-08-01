@@ -41,7 +41,42 @@ const getListado = () => {
   return listado_por_hacer
 }
 
+const actualizar = (descripcion, completado = true) => {
+  cargarDB()
+  let index = listado_por_hacer.findIndex( tarea => tarea.descripcion === descripcion)
+  
+  if (index >= 0) {
+    listado_por_hacer[index].completado = completado;
+    guardarDB();
+    return true
+  }{
+    return false
+  }
+}
+
+const borrar = (descripcion) => {
+  cargarDB();
+  
+  let index = listado_por_hacer.findIndex( tarea => tarea.descripcion === descripcion)
+
+  if (index >= 0){
+    let remove_index = listado_por_hacer.splice(index, 1)
+    guardarDB();
+
+    if(remove_index){
+      return 'Eliminado correctamente'
+    }else{
+      return 'Problemas al elminar'
+    }
+  }else{
+    return `${descripcion} No se encuentra guardado en la base de datos`
+  }
+
+}
+
 module.exports = {
   crear,
-  getListado
+  getListado,
+  actualizar,
+  borrar
 }

@@ -11,7 +11,8 @@ const opts = {
 
 const argv = require('yargs')
   .command('crear', 'Crear..', opts)
-  .command('actualizar', 'Actualizar ..', opts)    
+  .command('actualizar', 'Actualizar ..', opts)
+  .command('borrar', 'Borrar ..', opts)    
   .help()
   .argv;
 
