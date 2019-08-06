@@ -22,7 +22,6 @@ hsb.registerHelper('capitalizar', (texto) => {
   return palabras.join(' ')
 })
 
-
 app.get('/', function (req, res) {
   res.render('home',{
     nombre: 'ClauDio',
